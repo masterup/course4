@@ -9,6 +9,10 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "CalendarViewController.h"
+#import "LazyAPI.h"
+#import "StoreApplication.h"
 
 //анонимная категория
 @interface ViewController ()
@@ -25,26 +29,14 @@
 {
     [super viewDidLoad];
     
-    NSString* link = @"http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=100/json";
     
-    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:link]];
-    
-  
-    AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSDictionary* responseJson = JSON;
-        
-        
-        NSLog(@"%@", [[responseJson objectForKey:@"entry"] class]);
-        
-        self.applications = [[responseJson objectForKey:@"feed"] objectForKey:@"entry"];
+    [[LazyAPI sharedClient] getTopApplicationWithSuccess:^(NSArray* topApplication){
+        self.applications = topApplication;
         [self.tableView reloadData];
         
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"request fail!");
+    } andFail:^{
+        NSLog(@"fail!");
     }];
-    
-    
-    [requestOperation start];
     
     self.title = @"Top Paid Applications";
 }
@@ -60,7 +52,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return [self.applications count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,21 +65,11 @@
     }
     
     //и только после этого мы выставляем необходимую информацию
-//    cell.textLabel.text = [NSString stringWithFormat:@"cell %d", indexPath.row];
-    NSDictionary* applicationDictionary = [self.applications objectAtIndex:indexPath.row];
+    StoreApplication* app = [self.applications objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [[applicationDictionary objectForKey:@"im:name"] objectForKey:@"label"];
-//    cell.imageView.image = ;
-    
-    NSString* imageLink = [[[applicationDictionary objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"];
+    cell.textLabel.text = app.name;
 
-    [cell.imageView setImageWithURL:[NSURL URLWithString:imageLink] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
-    
-//    NSLog(@"%@", imageLink);
-//    
-//    NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageLink]];
-//    
-//    cell.imageView.image = [UIImage imageWithData:imageData];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:app.imageURL] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
     
     return cell;
 }

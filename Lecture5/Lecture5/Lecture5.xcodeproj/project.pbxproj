@@ -18,6 +18,7 @@
 		106836E51757B7D40034547B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 106836E41757B7D40034547B /* Default-568h@2x.png */; };
 		106836E81757B7D40034547B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106836E61757B7D40034547B /* MainStoryboard.storyboard */; };
 		106836EB1757B7D40034547B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106836EA1757B7D40034547B /* ViewController.m */; };
+		106836F31757BBCD0034547B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106836F21757BBCD0034547B /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		106836E71757B7D40034547B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		106836E91757B7D40034547B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		106836EA1757B7D40034547B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		106836F11757BBCD0034547B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		106836F21757BBCD0034547B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				106836E91757B7D40034547B /* ViewController.h */,
 				106836EA1757B7D40034547B /* ViewController.m */,
 				106836D51757B7D40034547B /* Supporting Files */,
+				106836F11757BBCD0034547B /* LoginViewController.h */,
+				106836F21757BBCD0034547B /* LoginViewController.m */,
 			);
 			path = Lecture5;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				106836DB1757B7D40034547B /* main.m in Sources */,
 				106836DF1757B7D40034547B /* AppDelegate.m in Sources */,
 				106836EB1757B7D40034547B /* ViewController.m in Sources */,
+				106836F31757BBCD0034547B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

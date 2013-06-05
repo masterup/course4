@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+- (IBAction)buttonAction:(id)sender;
+- (IBAction)secondAction:(id)sender;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface StoreApplication : NSObject
 
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* imageURL;
 @end

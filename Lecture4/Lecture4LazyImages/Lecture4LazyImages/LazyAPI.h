@@ -7,7 +7,11 @@
 //
 
 #import "AFHTTPClient.h"
+#import "AFNetworking.h"
 
 @interface LazyAPI : AFHTTPClient
+
+-(void)getTopApplicationWithSuccess:(void (^)(NSArray* topApplication))success andFail:(void (^)())fail;
++(LazyAPI*)sharedClient;
 
 @end
