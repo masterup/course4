@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Model" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="storeApplication" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="StoreApplication" inverseName="image" inverseEntity="StoreApplication" syncable="YES"/>
+    </entity>
+    <entity name="StoreApplication" representedClassName="StoreApplication" syncable="YES">
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="storeApplication" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StoreApplication" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Image" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
 </model>

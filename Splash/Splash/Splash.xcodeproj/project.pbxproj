@@ -18,6 +18,8 @@
 		1058064E1760FFA500B679CB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1058064D1760FFA500B679CB /* Default-568h@2x.png */; };
 		105806511760FFA500B679CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105806501760FFA500B679CB /* ViewController.m */; };
 		105806541760FFA500B679CB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105806521760FFA500B679CB /* ViewController.xib */; };
+		1058065D1760FFD200B679CB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1058065B1760FFD200B679CB /* DataViewController.m */; };
+		1058065E1760FFD200B679CB /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1058065C1760FFD200B679CB /* DataViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		1058064F1760FFA500B679CB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		105806501760FFA500B679CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		105806531760FFA500B679CB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		1058065A1760FFD200B679CB /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		1058065B1760FFD200B679CB /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		1058065C1760FFD200B679CB /* DataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,9 @@
 				1058064F1760FFA500B679CB /* ViewController.h */,
 				105806501760FFA500B679CB /* ViewController.m */,
 				105806521760FFA500B679CB /* ViewController.xib */,
+				1058065A1760FFD200B679CB /* DataViewController.h */,
+				1058065B1760FFD200B679CB /* DataViewController.m */,
+				1058065C1760FFD200B679CB /* DataViewController.xib */,
 				1058063E1760FFA500B679CB /* Supporting Files */,
 			);
 			path = Splash;
@@ -163,6 +171,7 @@
 				1058064C1760FFA500B679CB /* Default@2x.png in Resources */,
 				1058064E1760FFA500B679CB /* Default-568h@2x.png in Resources */,
 				105806541760FFA500B679CB /* ViewController.xib in Resources */,
+				1058065E1760FFD200B679CB /* DataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 				105806441760FFA500B679CB /* main.m in Sources */,
 				105806481760FFA500B679CB /* AppDelegate.m in Sources */,
 				105806511760FFA500B679CB /* ViewController.m in Sources */,
+				1058065D1760FFD200B679CB /* DataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

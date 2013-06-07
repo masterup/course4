@@ -8,8 +8,11 @@
 
 #import "AFHTTPClient.h"
 #import "AFNetworking.h"
+#import <CoreData/CoreData.h>
 
 @interface LazyAPI : AFHTTPClient
+
+@property (strong, nonatomic) NSManagedObjectContext* context;
 
 -(void)getTopApplicationWithSuccess:(void (^)(NSArray* topApplication))success andFail:(void (^)())fail;
 +(LazyAPI*)sharedClient;

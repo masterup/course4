@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		0E81E7114CC04249899BC804 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3BD8A6B308412E891C7F77 /* libPods.a */; };
 		100E493F175D046300B3F935 /* LazyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 100E493E175D046300B3F935 /* LazyAPI.m */; };
-		100E4942175D088700B3F935 /* StoreApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 100E4941175D088700B3F935 /* StoreApplication.m */; };
+		1058061D1760F2D900B679CB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1058061B1760F2D900B679CB /* Model.xcdatamodeld */; };
+		1058061F1760F33D00B679CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058061E1760F33D00B679CB /* CoreData.framework */; };
+		105806221760FD7800B679CB /* StoreApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 105806211760FD7700B679CB /* StoreApplication.m */; };
+		105806251760FD9900B679CB /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 105806241760FD9900B679CB /* Image.m */; };
+		105806291760FF2800B679CB /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105806271760FF2700B679CB /* SplashViewController.m */; };
 		106836C01757B62A0034547B /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106836BE1757B62A0034547B /* CalendarViewController.m */; };
 		106836F51757BD040034547B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106836F41757BD040034547B /* Storyboard.storyboard */; };
 		10FABBC71753BE720021BCBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FABBC61753BE720021BCBD /* UIKit.framework */; };
@@ -31,8 +35,14 @@
 /* Begin PBXFileReference section */
 		100E493D175D046300B3F935 /* LazyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyAPI.h; sourceTree = "<group>"; };
 		100E493E175D046300B3F935 /* LazyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyAPI.m; sourceTree = "<group>"; };
-		100E4940175D088700B3F935 /* StoreApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreApplication.h; sourceTree = "<group>"; };
-		100E4941175D088700B3F935 /* StoreApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreApplication.m; sourceTree = "<group>"; };
+		1058061C1760F2D900B679CB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1058061E1760F33D00B679CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		105806201760FD7700B679CB /* StoreApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreApplication.h; path = Model/StoreApplication.h; sourceTree = "<group>"; };
+		105806211760FD7700B679CB /* StoreApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreApplication.m; path = Model/StoreApplication.m; sourceTree = "<group>"; };
+		105806231760FD9800B679CB /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Model/Image.h; sourceTree = "<group>"; };
+		105806241760FD9900B679CB /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Model/Image.m; sourceTree = "<group>"; };
+		105806261760FF2700B679CB /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		105806271760FF2700B679CB /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		106836BD1757B62A0034547B /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		106836BE1757B62A0034547B /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		106836F41757BD040034547B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1058061F1760F33D00B679CB /* CoreData.framework in Frameworks */,
 				10FABC091753C00E0021BCBD /* SystemConfiguration.framework in Frameworks */,
 				10FABC071753C0070021BCBD /* MobileCoreServices.framework in Frameworks */,
 				10FABBC71753BE720021BCBD /* UIKit.framework in Frameworks */,
@@ -79,10 +90,10 @@
 		100E493C175D044500B3F935 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				105806201760FD7700B679CB /* StoreApplication.h */,
+				105806211760FD7700B679CB /* StoreApplication.m */,
 				100E493D175D046300B3F935 /* LazyAPI.h */,
 				100E493E175D046300B3F935 /* LazyAPI.m */,
-				100E4940175D088700B3F935 /* StoreApplication.h */,
-				100E4941175D088700B3F935 /* StoreApplication.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 		10FABBBA1753BE720021BCBD = {
 			isa = PBXGroup;
 			children = (
+				1058061E1760F33D00B679CB /* CoreData.framework */,
 				10FABC081753C00E0021BCBD /* SystemConfiguration.framework */,
 				10FABC061753C0070021BCBD /* MobileCoreServices.framework */,
 				10FABBCC1753BE720021BCBD /* Lecture4LazyImages */,
@@ -130,6 +142,11 @@
 				106836BD1757B62A0034547B /* CalendarViewController.h */,
 				106836BE1757B62A0034547B /* CalendarViewController.m */,
 				106836F41757BD040034547B /* Storyboard.storyboard */,
+				1058061B1760F2D900B679CB /* Model.xcdatamodeld */,
+				105806231760FD9800B679CB /* Image.h */,
+				105806241760FD9900B679CB /* Image.m */,
+				105806261760FF2700B679CB /* SplashViewController.h */,
+				105806271760FF2700B679CB /* SplashViewController.m */,
 			);
 			path = Lecture4LazyImages;
 			sourceTree = "<group>";
@@ -264,7 +281,10 @@
 				10FABBE01753BE720021BCBD /* ViewController.m in Sources */,
 				106836C01757B62A0034547B /* CalendarViewController.m in Sources */,
 				100E493F175D046300B3F935 /* LazyAPI.m in Sources */,
-				100E4942175D088700B3F935 /* StoreApplication.m in Sources */,
+				1058061D1760F2D900B679CB /* Model.xcdatamodeld in Sources */,
+				105806221760FD7800B679CB /* StoreApplication.m in Sources */,
+				105806251760FD9900B679CB /* Image.m in Sources */,
+				105806291760FF2800B679CB /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +407,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1058061B1760F2D900B679CB /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1058061C1760F2D900B679CB /* Model.xcdatamodel */,
+			);
+			currentVersion = 1058061C1760F2D900B679CB /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 10FABBBB1753BE720021BCBD /* Project object */;
 }

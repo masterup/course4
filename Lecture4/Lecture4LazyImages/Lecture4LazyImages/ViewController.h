@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface ViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext* context;
 
 @end

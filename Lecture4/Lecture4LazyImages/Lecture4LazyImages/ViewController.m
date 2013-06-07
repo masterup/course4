@@ -14,6 +14,8 @@
 #import "LazyAPI.h"
 #import "StoreApplication.h"
 
+#import "AppDelegate.h"
+
 //анонимная категория
 @interface ViewController ()
 
@@ -29,7 +31,11 @@
 {
     [super viewDidLoad];
     
+    AppDelegate* appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+    self.context = [appDelegate managedObjectContext];
+    
+    [LazyAPI sharedClient].context = self.context;
     [[LazyAPI sharedClient] getTopApplicationWithSuccess:^(NSArray* topApplication){
         self.applications = topApplication;
         [self.tableView reloadData];
@@ -69,7 +75,26 @@
     
     cell.textLabel.text = app.name;
 
-    [cell.imageView setImageWithURL:[NSURL URLWithString:app.imageURL] placeholderImage:[UIImage imageNamed:@"Placeholder.png"]];
+    if (app.image != nil) {
+        cell.imageView.image = [app.image valueForKey:@"image"];
+    }
+    else {
+        [cell.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:app.imageURL]] placeholderImage:[UIImage imageNamed:@"Placeholder.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            //
+            
+            NSManagedObject *managedImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:app.managedObjectContext];
+            
+            app.image = managedImage;
+            
+            [managedImage setValue:image forKey:@"image"];
+            
+            [app.managedObjectContext save:nil];
+            
+            cell.imageView.image = image;
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            //
+        }];
+    }
     
     return cell;
 }

@@ -34,7 +34,7 @@
         NSArray* rowApplications = [[responseObject objectForKey:@"feed"] objectForKey:@"entry"];
         
         for (int i = 0; i < [rowApplications count]; i++) {
-            StoreApplication* application = [[StoreApplication alloc] init];
+            StoreApplication* application = [NSEntityDescription insertNewObjectForEntityForName:@"StoreApplication" inManagedObjectContext:self.context];
             
             application.name = [[[rowApplications objectAtIndex:i] objectForKey:@"im:name"] objectForKey:@"label"];
             application.imageURL = [[[[rowApplications objectAtIndex:i] objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"];
@@ -43,6 +43,8 @@
         }
         
         NSLog(@"%@", results);
+        
+        [self.context save:nil];
         
         success(results);
         
